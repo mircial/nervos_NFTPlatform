@@ -1,0 +1,22 @@
+{
+  "name": "NFTChallengeCore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "clean": "rm -rf ./build/",
+    "compile": "npm run clean && truffle compile"
+  },
+  "author": "dev",
+  "license": "ISC",
+  "devDependencies": {
+    "@polyjuice-provider/base": "0.0.1-rc11",
+    "@polyjuice-provider/web3": "0.0.1-rc11",
+    "truffle": "^5.4.2",
+    "web3": "^1.4.0"
+  }
+}

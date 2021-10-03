@@ -22,84 +22,35 @@ npm install -g truffle
 ### Install dependencies
 
 ```bash
-git clone https://github.com/mircial/NFTChallenge.git
+git clone https://github.com/mircial/nervos_NFTPlatform.git
 
-cd NFTChallenge
+cd nervos_NFTPlatform
 
 yarn
 ```
 
-## Connecting Truffle to Aurora
+## Compile with Truffle 
 
-Export your `MNEMONIC` as follows:
-
-```bash
-export MNEMONIC='YOUR MNEMONIC HERE'
-```
-
-Now in `truffle-config.js`, you will need to change the `from` address as shown
-
-below in the `aurora` network section:
+Change your `private key` as follows in `index.js`:
 
 ```bash
-aurora: {
-
-  provider: () => setupWallet('https://testnet.aurora.dev'),
-
-  network_id: 0x4e454153,
-
-  gas: 10000000,
-
-  from: '0x256807C23d5085ad22CC124c00852eE60989fC3E' // CHANGE THIS ADDRESS
-
-},
+const DEPLOYER_PRIVATE_KEY = ''
 ```
 
- The  `truffle-config.js` configuration will read your `MNEMONIC` environment variable and recover the address that will be used for sending or signing transactions on the Aurora network.
+Now in `truffle-config.js`, you will need to make the docker used.
+
+using below command to compile contracts.
+
+```bash
+yarn compile
+```
 
 ## Deploying Contracts
 
-To deploy the `NFTChallenge` contract,  you can run the `yarn` command as follows:
+To deploy the `NFTChallenge` contract,  you can run the `node` command as follows:
 
 ```bash
-yarn deploy:aurora
-
-....
-1_initial_migration.js
-=====================
-
-   Deploying 'Migrations'
-   -----------------------------
-
-   > transaction hash:    0x282012c791d65d0ce2fd1fd9fcc41179dba5bd06c3b02e31e53dbe9cc8af62c1
-
-   > Blocks: 7            Seconds: 
-
-   > contract address:    0x3635D999d8CdA2fAf304b390fb26a9c2f364dFbd
-
-   > block number:        59151611
-
-   > block timestamp:     1622034185
-
-   > account:             0x256807C23d5085ad22CC124c00852eE60989fC3E
-
-   > balance:             0
-
-   > gas used:            2576274 (0x274f92)
-
-   > gas price:           20 gwei
-
-   > value sent:          0 ETH
-
-    
-    
-2_deploy_contracts.js
-=====================
-
-   Deploying 'NFTChallengeFactory'
-   -----------------------------
-   ...
-....
+node index.js ChallengeFactory.json
 ```
 
 ## Interface

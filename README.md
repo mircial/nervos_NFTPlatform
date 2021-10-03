@@ -50,7 +50,7 @@ yarn compile
 To deploy the `NFTChallenge` contract,  you can run the `node` command as follows:
 
 ```bash
-node index.js ChallengeFactory.json
+node index.js NFTChallengeFactory.json
 ```
 
 ## Interface
